@@ -1,7 +1,7 @@
 var demoApp;
 
 $(document).ready( function() {
-   DemoApp.prototype = $.extend(true, LAB.app.ThreeApp.prototype, DemoApp.prototype);
+   DemoApp.prototype = $.extend(true, SUD.app.ThreeApp.prototype, DemoApp.prototype);
    demoApp = new DemoApp();
 
    demoApp.begin();
@@ -12,7 +12,7 @@ $(document).ready( function() {
 // ===========================================
 
 DemoApp = function() {
-	LAB.app.ThreeApp.call( this );		
+	SUD.app.ThreeApp.call( this );		
    
    var bStats =  true;
    var camera;
@@ -38,11 +38,11 @@ DemoApp = function() {
       this.scene.add( pointLight );
       
       //load some geometry
-      geo = new LAB.three.Mesh();
+      geo = new SUD.three.Mesh();
       geo.load( "models/emitterGeometry.js", new THREE.MeshPhongMaterial(), this.scene );
       
       //particle emitter
-      emitter = new LAB.three.ParticleEmitter( { maxParticleCount: 10000, renderer:this.renderer });
+      emitter = new SUD.three.ParticleEmitter( { maxParticleCount: 10000, renderer:this.renderer });
 	}
    
 	// ===========================================
@@ -71,7 +71,7 @@ DemoApp = function() {
       //emit some particles from the geometry onceit's loaded
       if(geo.isLoaded){
          for(var i=0; i<100; i++){
-            var face = geo.geometry.faces[ LAB.randomInt( 0, geo.geometry.faces.length-1) ];//get random face
+            var face = geo.geometry.faces[ SUD.randomInt( 0, geo.geometry.faces.length-1) ];//get random face
             var pos = geo.randomPointOnMesh( face );
             var vel = new THREE.Vector4(face.normal.x, face.normal.y, face.normal.z, 0 );
             vel.multiplyScalar( .125 );//use it's normal as our new particle's velocity
@@ -79,10 +79,10 @@ DemoApp = function() {
             
             emitter.addParticle(pos,
                                 vel,
-                                {x: LAB.random( .1, 1), y:LAB.random( .1, 1), z:LAB.random( .1, 1)},//color
-                                LAB.random( 2, 4),//size
+                                {x: SUD.random( .1, 1), y:SUD.random( .1, 1), z:SUD.random( .1, 1)},//color
+                                SUD.random( 2, 4),//size
                                 currentTime,//time
-                                LAB.random( .5, 2 ));//lifespan
+                                SUD.random( .5, 2 ));//lifespan
          }
       }
 	}

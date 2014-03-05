@@ -1,7 +1,7 @@
 // include your custom classes here
-LAB.require("js/app/cooldivs.js");
-LAB.require("js/app/orbit.js");
-LAB.require("js/app/scaler.js");
+SUD.require("js/app/cooldivs.js");
+SUD.require("js/app/orbit.js");
+SUD.require("js/app/scaler.js");
 
 
 var demoApp;
@@ -17,12 +17,12 @@ $(document).ready( function() {
 // ===========================================
 
 	DemoApp = function(){
-		LAB.app.BaseApp.call( this );		
+		SUD.app.BaseApp.call( this );		
 		
 		// Create a new cooldiv which inherits from an Agent class
 		// Add it to a group
 		// update and draw the elements in that group
-		var divGroup = new LAB.agents.Group();
+		var divGroup = new SUD.agents.Group();
 		var a0 = new Cooldiv("amazingDiv0", 200, 300, 0, 0, 200, 20, true);
 		var a1 = new Cooldiv("amazingDiv1", 200, 300, 0, 0, 200, 20, true);
 		var a2 = new Cooldiv("amazingDiv2", 200, 300, 0, 0, 200, 20, true);
@@ -74,4 +74,4 @@ $(document).ready( function() {
 	// YourAppName.prototype = $.extend(true, whatYouWantToExtend.prototype, ..., YourApp.prototype)
 	// ... = extend as many classes as you want (within reason, dude)
 	
-	DemoApp.prototype = $.extend(true, LAB.app.BaseApp.prototype, DemoApp.prototype);
+	DemoApp.prototype = $.extend(true, SUD.app.BaseApp.prototype, DemoApp.prototype);

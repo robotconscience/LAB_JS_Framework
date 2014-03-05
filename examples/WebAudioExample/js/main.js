@@ -11,10 +11,10 @@ $(document).ready( function() {
 // ===========================================
 
 	DemoApp = function(){
-		LAB.app.BaseApp.call( this );
+		SUD.app.BaseApp.call( this );
 		
 		var wa_player;
-		var pan = new LAB.geom.Point();
+		var pan = new SUD.geom.Point();
 			
 		//setup
 			
@@ -23,7 +23,7 @@ $(document).ready( function() {
 			this.registerMouseEvents();			
 			
 			// Web Audio API element
-			wa_player = new LAB.sound.WAPlayer();	
+			wa_player = new SUD.sound.WAPlayer();	
 			wa_player.loadFile("sounds/tone.mp3");
 		}
 		
@@ -54,4 +54,4 @@ $(document).ready( function() {
 	// YourAppName.prototype = $.extend(true, whatYouWantToExtend.prototype, ..., YourApp.prototype)
 	// ... = extend as many classes as you want (within reason, dude)
 	
-	DemoApp.prototype = $.extend(true, LAB.app.BaseApp.prototype, DemoApp.prototype);
+	DemoApp.prototype = $.extend(true, SUD.app.BaseApp.prototype, DemoApp.prototype);

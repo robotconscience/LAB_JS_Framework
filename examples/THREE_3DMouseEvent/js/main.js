@@ -1,10 +1,10 @@
 // load custom class(es) here
-LAB.require("js/Sphere.js");
+SUD.require("js/Sphere.js");
 
 var demoApp;
 
 $(document).ready( function() {
-	DemoApp.prototype = $.extend(true, LAB.app.ThreeApp.prototype, DemoApp.prototype);
+	DemoApp.prototype = $.extend(true, SUD.app.ThreeApp.prototype, DemoApp.prototype);
 	demoApp = new DemoApp();
 	demoApp.begin();
 });
@@ -13,7 +13,7 @@ $(document).ready( function() {
 // ===== DEMO APP
 // ===========================================
 DemoApp = function() {
-	LAB.app.ThreeApp.call( this );		
+	SUD.app.ThreeApp.call( this );		
    
 	var _self = this;
    
@@ -43,12 +43,12 @@ DemoApp = function() {
 		this.scene.add( light );
 		
 		// register handler for a specific scene and camera
-		mouseHandler3D = new LAB.three.MouseHandler3D(this.scene, this.camera);
+		mouseHandler3D = new SUD.three.MouseHandler3D(this.scene, this.camera);
 		
 		// is there a better way to handle this than binding it?
-		mouseHandler3D.addEventListener(LAB.three.MouseEvent3D.DOWN, on3DDown.bind(this));
-		mouseHandler3D.addEventListener(LAB.three.MouseEvent3D.UP, on3DUp.bind(this));
-		mouseHandler3D.addEventListener(LAB.three.MouseEvent3D.MOVE, on3DMove.bind(this));		
+		mouseHandler3D.addEventListener(SUD.three.MouseEvent3D.DOWN, on3DDown.bind(this));
+		mouseHandler3D.addEventListener(SUD.three.MouseEvent3D.UP, on3DUp.bind(this));
+		mouseHandler3D.addEventListener(SUD.three.MouseEvent3D.MOVE, on3DMove.bind(this));		
 		
 		for (var i=0; i<100; i++){
 			spheres[spheres.length] = new Sphere();
@@ -58,7 +58,7 @@ DemoApp = function() {
 			// need to pass the THREE.Mesh object, can't pass the sphere because
 			// ray.intersectScene( scene ) returns an array of THREE.Mesh objects
 			// that are compared against objects registered with the touch handler
-			mouseHandler3D.register(spheres[i].object, [LAB.three.MouseEvent3D.UP, LAB.three.MouseEvent3D.DOWN]);
+			mouseHandler3D.register(spheres[i].object, [SUD.three.MouseEvent3D.UP, SUD.three.MouseEvent3D.DOWN]);
 		}
 		
 		translatePoint.x = window.innerWidth/2;
@@ -87,10 +87,10 @@ DemoApp = function() {
 		//mouseHandler3D.unregister(event.object);
 		
 		// example of unregistering a one or more events (doesn't delete object)
-		//mouseHandler3D.unregister(event.object, [LAB.three.MoveEvent3D.UP]);
+		//mouseHandler3D.unregister(event.object, [SUD.three.MoveEvent3D.UP]);
 		
 		// example of registering a new event (appends to current events for object)
-		//mouseHandler3D.register(event.object, [LAB.three.MoveEvent3D.MOVE]);
+		//mouseHandler3D.register(event.object, [SUD.three.MoveEvent3D.MOVE]);
 	}
 	
 	function on3DDown(event) {
@@ -188,7 +188,7 @@ DemoApp = function() {
 }
 
 	/*
-	DemoApp.prototype 				= new LAB.ThreeApp();
+	DemoApp.prototype 				= new SUD.ThreeApp();
 	DemoApp.prototype.constructor 	= DemoApp;
-	DemoApp.prototype.supr 			= LAB.ThreeApp.prototype;	
+	DemoApp.prototype.supr 			= SUD.ThreeApp.prototype;	
 	*/

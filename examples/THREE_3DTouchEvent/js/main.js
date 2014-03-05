@@ -1,10 +1,10 @@
 // load custom class(es) here
-LAB.require("js/Sphere.js");
+SUD.require("js/Sphere.js");
 
 var demoApp;
 
 $(document).ready( function() {
-	DemoApp.prototype = $.extend(true, LAB.app.ThreeApp.prototype, DemoApp.prototype);
+	DemoApp.prototype = $.extend(true, SUD.app.ThreeApp.prototype, DemoApp.prototype);
 	demoApp = new DemoApp();
 	demoApp.begin();
 });
@@ -13,7 +13,7 @@ $(document).ready( function() {
 // ===== DEMO APP
 // ===========================================
 DemoApp = function() {
-	LAB.app.ThreeApp.call( this );		
+	SUD.app.ThreeApp.call( this );		
    
 	var _self = this;
    
@@ -43,8 +43,8 @@ DemoApp = function() {
 		this.scene.add( light );
 		
 		// register touch handler for a specific scene and camera		
-		touchHandler3D = new LAB.three.TouchHandler3D(this.scene, this.camera, true);		
-		touchHandler3D.addEventListener(LAB.three.TouchEvent3D.TAP, on3DTap.bind(this));
+		touchHandler3D = new SUD.three.TouchHandler3D(this.scene, this.camera, true);		
+		touchHandler3D.addEventListener(SUD.three.TouchEvent3D.TAP, on3DTap.bind(this));
 		
 		for (var i=0; i<100; i++){
 			spheres[spheres.length] = new Sphere();
@@ -54,7 +54,7 @@ DemoApp = function() {
 			// need to pass the THREE.Mesh object, can't pass the sphere because
 			// ray.intersectScene( scene ) returns an array of THREE.Mesh objects
 			// that are compared against objects registered with the touch handler
-			touchHandler3D.register(spheres[i].object, [LAB.three.TouchEvent3D.TAP]);
+			touchHandler3D.register(spheres[i].object, [SUD.three.TouchEvent3D.TAP]);
 		}
 		
 		translatePoint.x = window.innerWidth/2;
@@ -159,7 +159,7 @@ DemoApp = function() {
 }
 
 	/*
-	DemoApp.prototype 				= new LAB.ThreeApp();
+	DemoApp.prototype 				= new SUD.ThreeApp();
 	DemoApp.prototype.constructor 	= DemoApp;
-	DemoApp.prototype.supr 			= LAB.ThreeApp.prototype;	
+	DemoApp.prototype.supr 			= SUD.ThreeApp.prototype;	
 	*/

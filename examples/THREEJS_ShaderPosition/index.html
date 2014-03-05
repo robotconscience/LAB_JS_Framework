@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>SUD JS - THREE Example</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/reset.css" type="text/css" media="screen" charset="utf-8" />
+		<link rel="stylesheet" href="css/main.css" type="text/css" media="screen" charset="utf-8" />
+
+		<script id="vertexShader" type="x-shader/x-vertex">
+
+			uniform float time;
+			attribute float duration;
+
+			void main()	{
+
+				vec3 pos = vec3(position);
+				pos.x = pos.x + time/duration;
+
+				vec4 mvPosition = modelViewMatrix * vec4( pos, 1.0 );
+				gl_Position = projectionMatrix * mvPosition;
+			}
+
+		</script>
+
+		<script id="fragmentShader" type="x-shader/x-fragment">
+
+			uniform vec3 color;
+			uniform sampler2D texture;
+
+			void main() {
+
+				gl_FragColor = vec4( color, 1.0 );
+				gl_FragColor = gl_FragColor * texture2D( texture, gl_PointCoord );
+
+			}
+
+		</script>
+
+	<!-- basic libraries -->
+        <script type="text/javascript" src="../../libs/jquery/jquery-1.7.1.min.js"></script>
+        <script type="text/javascript" src="../../libs/three/three.min.js"></script>
+   
+	<!-- SUD JS -->
+        <script type="text/javascript" src="../../build/sudjs-0.4.0.js"></script>
+        <script type="text/javascript" src="../../build/sudjs_three-0.4.0.js"></script>
+	
+	<!-- MAIN -->
+        <script type="text/javascript" src="js/main.js"></script>
+         
+   <!-- GUI -->
+      <link href="../../libs/gui/gui.css" media="screen" rel="stylesheet" type="text/css" />
+      <script type="text/javascript" src="../../libs/gui/gui.min.js"></script>
+
+   </head>
+	<body>
+		<div id="sud_container">
+      	</div>
+   </body>
+</html>

@@ -1,7 +1,7 @@
 //<!-- Event Examples -->
-LAB.require("js/ClassA.js");
-LAB.require("js/ClassB.js");
-LAB.require("js/ClassC.js");
+SUD.require("js/ClassA.js");
+SUD.require("js/ClassB.js");
+SUD.require("js/ClassC.js");
 
 $(document).ready(function() {
 

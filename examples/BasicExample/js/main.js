@@ -6,7 +6,7 @@ $(document).ready( function() {
 	// YourAppName.prototype = $.extend(true, whatYouWantToExtend.prototype, ..., YourApp.prototype)
 	// ... = extend as many classes as you want (within reason, dude)
 	
-	DemoApp.prototype = $.extend(true, LAB.app.BaseApp.prototype, DemoApp.prototype);
+	DemoApp.prototype = $.extend(true, SUD.app.BaseApp.prototype, DemoApp.prototype);
 	demoApp 	= new DemoApp();
 	demoApp.begin();
 });
@@ -16,7 +16,7 @@ $(document).ready( function() {
 // ===========================================
 
 	DemoApp = function(){
-		LAB.app.BaseApp.call( this );		
+		SUD.app.BaseApp.call( this );		
 		
 		var amazingDiv = document.getElementById("amazingDiv");
 		

@@ -1,7 +1,7 @@
 var app;
 
 $(document).ready( function() {
-	DemoApp.prototype = $.extend(true, LAB.app.BaseApp.prototype, DemoApp.prototype);
+	DemoApp.prototype = $.extend(true, SUD.app.BaseApp.prototype, DemoApp.prototype);
 	app 	= new DemoApp();
 	app.begin();
 });
@@ -11,7 +11,7 @@ $(document).ready( function() {
 // ===========================================
 
 	DemoApp = function(){
-		LAB.app.BaseApp.call( this );
+		SUD.app.BaseApp.call( this );
 		
 		//-------------------------------------------------------
 		this.setup = function (){

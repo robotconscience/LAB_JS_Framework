@@ -1,3 +1,3 @@
 #!/bin/sh
 
-python build.py --all --version=0.4.0
+python build.py --all --version=0.4.1

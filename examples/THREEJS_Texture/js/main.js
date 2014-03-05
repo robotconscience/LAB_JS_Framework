@@ -1,7 +1,7 @@
 var demoApp;
 
 $(document).ready( function() {
-   DemoApp.prototype = $.extend(true, LAB.app.ThreeApp.prototype, DemoApp.prototype);
+   DemoApp.prototype = $.extend(true, SUD.app.ThreeApp.prototype, DemoApp.prototype);
    demoApp = new DemoApp();
    demoApp.begin();
 });
@@ -11,7 +11,7 @@ $(document).ready( function() {
 // ===========================================
 
 DemoApp = function() {
-	LAB.app.ThreeApp.call( this );		
+	SUD.app.ThreeApp.call( this );		
    
    var bStats =  true;
    var camera;

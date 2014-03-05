@@ -1,5 +1,5 @@
 /************************************************
-	LAB JS BASE BEHAVIORS APP
+	SUD JS BASE BEHAVIORS APP
 ************************************************/
 
 INCLUDED LIBRARIES

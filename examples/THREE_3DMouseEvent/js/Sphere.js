@@ -1,8 +1,8 @@
-LAB.SphereGeometry;
+SUD.SphereGeometry;
 
 Sphere = function(){
 	
-	LAB.SphereGeometry = LAB.SphereGeometry || new THREE.SphereGeometry( 100, 20, 20 );
+	SUD.SphereGeometry = SUD.SphereGeometry || new THREE.SphereGeometry( 100, 20, 20 );
 	
 	this.object = null;
 	//this.x = this.y = this.z = 0;
@@ -61,10 +61,10 @@ Sphere.prototype = {
 	},
 	
 	create:function( radius ){
-		this.object   = new THREE.Mesh( LAB.SphereGeometry, new THREE.MeshLambertMaterial( { color: Math.random() * 0xffffff } ));
-		this.x 		  = LAB.random(-window.innerWidth,window.innerWidth);
-		this.y 		  = LAB.random(-window.innerHeight,window.innerHeight);
-		this.z 		  = LAB.random(-500,500);
+		this.object   = new THREE.Mesh( SUD.SphereGeometry, new THREE.MeshLambertMaterial( { color: Math.random() * 0xffffff } ));
+		this.x 		  = SUD.random(-window.innerWidth,window.innerWidth);
+		this.y 		  = SUD.random(-window.innerHeight,window.innerHeight);
+		this.z 		  = SUD.random(-500,500);
 		
 		this.scaleX  = radius/100;
 		this.scaleY  = radius/100;

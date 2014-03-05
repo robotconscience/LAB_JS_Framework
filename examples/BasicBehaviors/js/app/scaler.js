@@ -25,4 +25,4 @@ Scaler.prototype.apply = function(Agent) {
 
 
 
-var behave = $.extend(true, Orbit.prototype, LAB.agents.Behavior.prototype);
+var behave = $.extend(true, Orbit.prototype, SUD.agents.Behavior.prototype);

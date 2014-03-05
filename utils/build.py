@@ -13,7 +13,7 @@ import sys
 import re
 
 COMMON_FILES = [
-'LabBase.js',
+'sudBase.js',
 'Utils.js',
 'EventDispatcher.js',
 'TouchGestureHandler.js',
@@ -48,12 +48,12 @@ def merge(files):
 	buffer = []
 
 	for filename in files:
-		with open(os.path.join('../src', 'lab', filename), 'r') as f:
+		with open(os.path.join('../src', 'sud', filename), 'r') as f:
 			buffer.append(f.read())
 
 	joined = "".join(buffer)
-	#remove LAB.require (but not the function LAB.require)
-	joined = re.sub(r"LAB.require\(.*\);","",joined)
+	#remove SUD.require (but not the function SUD.require)
+	joined = re.sub(r"SUD.require\(.*\);","",joined)
 
 	return joined
 
@@ -122,7 +122,7 @@ def buildLib(files, filename, fname_externs, version):
 
 def buildIncludes(files, filename):
 
-	template = '\t\t<script src="../src/lab/%s"></script>'
+	template = '\t\t<script src="../src/sud/%s"></script>'
 	text = "\n".join(template % f for f in files)
 
 	output(text, filename + '.js')
@@ -132,19 +132,19 @@ def parse_args():
 
 	if ap:
 		parser = argparse.ArgumentParser(description='Build and compress Three.js')
-		parser.add_argument('--common', help='Build LAB Framework', action='store_const', const=True)
-		parser.add_argument('--three', help='Build LAB THREE utils', action='store_const', const=True)
+		parser.add_argument('--common', help='Build SUD Framework', action='store_const', const=True)
+		parser.add_argument('--three', help='Build SUD THREE utils', action='store_const', const=True)
 		parser.add_argument('--version', help='Name of version', default='r1')
-		parser.add_argument('--all', help='Build all LAB JS files', action='store_true')
+		parser.add_argument('--all', help='Build all SUD JS files', action='store_true')
 
 		args = parser.parse_args()
 
 	else:
-		parser = optparse.OptionParser(description='Build and compress LAB Framework')
-		parser.add_option('--common', dest='common', help='Build LAB Framework', action='store_const', const=True)
-		parser.add_option('--three', dest='three', help='Build LAB THREE utils', action='store_const', const=True)
+		parser = optparse.OptionParser(description='Build and compress SUD Framework')
+		parser.add_option('--common', dest='common', help='Build SUD Framework', action='store_const', const=True)
+		parser.add_option('--three', dest='three', help='Build SUD THREE utils', action='store_const', const=True)
 		parser.add_option('--version', dest='version', help='Name of version',default='r1')
-		parser.add_option('--all', dest='all', help='Build all Three.js versions', action='store_true')
+		parser.add_option('--all', dest='all', help='Build all', action='store_true')
 
 		args, remainder = parser.parse_args()
 
@@ -163,9 +163,9 @@ def main(argv=None):
 	version = args.version
 
 	config = [
-	['labjs', 'includes', '', COMMON_FILES, args.common],
-	['labjs_three', 'includes_three', 'externs_extras', THREE_FILES, args.three]
-	#['labjs_tdl', 'includes_dom', 'externs_extras', TDL_FILES, args.tdl]
+	['sudjs', 'includes', '', COMMON_FILES, args.common],
+	['sudjs_three', 'includes_three', 'externs_extras', THREE_FILES, args.three]
+	#['sudjs_tdl', 'includes_dom', 'externs_extras', TDL_FILES, args.tdl]
 	]
 
 	for fname_lib, fname_inc, fname_externs, files, enabled in config:

@@ -1,12 +1,12 @@
 // load graphics base, because this is a graphics app
 // ...this doesn't really work yet
-LAB.require("../../libs/tsps/TSPSApp.js");
+SUD.require("../../libs/tsps/TSPSApp.js");
 
 var demoApp;
 
 $(document).ready( function() {	
 	
-	DemoApp.prototype = $.extend(true, LAB.app.TSPSApp.prototype, DemoApp.prototype);
+	DemoApp.prototype = $.extend(true, SUD.app.TSPSApp.prototype, DemoApp.prototype);
 	demoApp 	= new DemoApp();
 	// is there a good way to call this automatically?
 	demoApp.begin();
@@ -17,7 +17,7 @@ $(document).ready( function() {
 // ===========================================
 
 	DemoApp = function(){
-		LAB.app.TSPSApp.call( this );
+		SUD.app.TSPSApp.call( this );
 				
 		this.canvas = null;
 		ctx 		= null;

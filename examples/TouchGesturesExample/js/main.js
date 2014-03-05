@@ -11,7 +11,7 @@ $(document).ready( function() {
 // ===========================================
 
 	DemoApp = function(){
-		LAB.app.BaseApp.call( this );		
+		SUD.app.BaseApp.call( this );		
 		
 		var amazingDiv = document.getElementById("amazingDiv");
 		
@@ -27,18 +27,18 @@ $(document).ready( function() {
 			
 			this.registerMouseEvents();
 					
-			gestureHandler = new LAB.TouchGestureHandler();
+			gestureHandler = new SUD.TouchGestureHandler();
 			// register window so we capture all mouse events for entire screen
 			gestureHandler.register(window);
 			
 			// can also register a single DOM object
 			//gestureHandler.register("amazingDiv");
 			
-			gestureHandler.addEventListener(LAB.TouchEvent.PRESS, onTouchPress);
-			gestureHandler.addEventListener(LAB.TouchEvent.RELEASE, onTouchRelease);
-			gestureHandler.addEventListener(LAB.TouchEvent.FLICK, onTouchFlick);
-			gestureHandler.addEventListener(LAB.TouchEvent.DRAG, onTouchDrag);
-			gestureHandler.addEventListener(LAB.TouchEvent.TAP, onTouchTap);
+			gestureHandler.addEventListener(SUD.TouchEvent.PRESS, onTouchPress);
+			gestureHandler.addEventListener(SUD.TouchEvent.RELEASE, onTouchRelease);
+			gestureHandler.addEventListener(SUD.TouchEvent.FLICK, onTouchFlick);
+			gestureHandler.addEventListener(SUD.TouchEvent.DRAG, onTouchDrag);
+			gestureHandler.addEventListener(SUD.TouchEvent.TAP, onTouchTap);
 		}
 		
 		function onTouchTap(event) {
@@ -80,4 +80,4 @@ $(document).ready( function() {
 	// YourAppName.prototype = $.extend(true, whatYouWantToExtend.prototype, ..., YourApp.prototype)
 	// ... = extend as many classes as you want (within reason, dude)
 	
-	DemoApp.prototype = $.extend(true, LAB.app.BaseApp.prototype, DemoApp.prototype);
+	DemoApp.prototype = $.extend(true, SUD.app.BaseApp.prototype, DemoApp.prototype);

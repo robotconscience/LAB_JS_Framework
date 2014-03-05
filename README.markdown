@@ -1,7 +1,9 @@
 About
 ------------
 
-The LAB JS framework is a loose set of tools meant to make the prototyping and production of large scale javascript projects simpler and more akin to creative coding environments like Processing and openFrameworks. The framework is meant to make it simpler to use new JS toolkits--such as THREE.JS or TDL--in a way that feels more similar to the aforementioned environments. While we have written some light wrappers for libraries where appropriate (see lab/three, for example), the framework is NOT a new WebGL or HTML5 library. Our aim is solely to make using these new libraries easier and to wrangle them into a format that makes sense for us (and hopefully others).
+The SUD (setup/update/draw) framework is a loose set of tools meant to make the prototyping and production of large scale javascript projects simpler and more akin to creative coding environments like Processing and openFrameworks. The framework is meant to make it simpler to use new JS toolkits--such as THREE.JS or TDL--in a way that feels more similar to the aforementioned environments. While we have written some light wrappers for libraries where appropriate (see lab/three, for example), the framework is NOT a new WebGL or HTML5 library. Our aim is solely to make using these new libraries easier and to wrangle them into a format that makes sense for us (and hopefully others).
+
+SUD was started at the [LAB at Rockwell Group](http://rockwellgroup.com/lab) by Brett Renfer, Lars Berg, and Jeff Hoefs.
 
 Notes
 ------------

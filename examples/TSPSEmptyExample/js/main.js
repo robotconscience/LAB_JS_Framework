@@ -1,9 +1,9 @@
-LAB.require("../../libs/tsps/TSPSApp.js");
+SUD.require("../../libs/tsps/TSPSApp.js");
 
 var app;
 
 $(document).ready( function() {
-	DemoApp.prototype = $.extend(true, LAB.app.BaseApp.prototype, LAB.app.TSPSApp.prototype, DemoApp.prototype);
+	DemoApp.prototype = $.extend(true, SUD.app.BaseApp.prototype, SUD.app.TSPSApp.prototype, DemoApp.prototype);
 	app 	= new DemoApp();
 	app.begin();
 });
@@ -13,8 +13,8 @@ $(document).ready( function() {
 // ===========================================
 
 	DemoApp = function(){
-		LAB.app.BaseApp.call( this );
-		LAB.app.TSPSApp.call( this );
+		SUD.app.BaseApp.call( this );
+		SUD.app.TSPSApp.call( this );
 		
 		//-------------------------------------------------------
 		this.setup = function (){

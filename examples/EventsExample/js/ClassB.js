@@ -2,7 +2,7 @@ var ClassB = function() {
 	"use strict";
 	var self = this;
 	this.className = "ClassB";
-	LAB.EventDispatcher.call(this, this);
+	SUD.EventDispatcher.call(this, this);
 	
 	var arg = "hi, I\'m an optional arg";
 	
@@ -12,7 +12,7 @@ var ClassB = function() {
 	
 }
 
-ClassB.prototype = new LAB.EventDispatcher;
+ClassB.prototype = new SUD.EventDispatcher;
 ClassB.prototype.constructor = ClassB;
 
 ClassB.prototype.dispatch = function(arg) {
